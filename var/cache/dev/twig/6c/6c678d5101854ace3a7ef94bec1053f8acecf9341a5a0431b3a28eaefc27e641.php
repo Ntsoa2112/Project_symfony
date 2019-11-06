@@ -60,7 +60,10 @@ class __TwigTemplate_053c6178101831557c4addda149a7f14070f6ede2adb302dc493c4cc176
         echo "    </head>
     <body>
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-        <a class=\"navbar-brand\" href=\"/\">SymBlog</a>
+        <a class=\"navbar-brand\" href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">SymBlog</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -68,10 +71,16 @@ class __TwigTemplate_053c6178101831557c4addda149a7f14070f6ede2adb302dc493c4cc176
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
           <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"/blog\">Articles <span class=\"sr-only\">(current)</span></a>
+              <a class=\"nav-link\" href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
+        echo "\">Articles <span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"/blog/new\">Créer un aricle</a>
+              <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_create");
+        echo "\">Créer un aricle</a>
             </li>
           </ul>
         </div>
@@ -175,9 +184,14 @@ class __TwigTemplate_053c6178101831557c4addda149a7f14070f6ede2adb302dc493c4cc176
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  156 => 30,  138 => 28,  120 => 7,  101 => 5,  89 => 31,  87 => 30,  84 => 29,  82 => 28,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  165 => 30,  147 => 28,  129 => 7,  110 => 5,  98 => 31,  96 => 30,  93 => 29,  91 => 28,  82 => 22,  76 => 19,  65 => 11,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -192,7 +206,7 @@ class __TwigTemplate_053c6178101831557c4addda149a7f14070f6ede2adb302dc493c4cc176
     </head>
     <body>
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
-        <a class=\"navbar-brand\" href=\"/\">SymBlog</a>
+        <a class=\"navbar-brand\" href=\"{{ path('home') }}\">SymBlog</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -200,10 +214,10 @@ class __TwigTemplate_053c6178101831557c4addda149a7f14070f6ede2adb302dc493c4cc176
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
           <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"/blog\">Articles <span class=\"sr-only\">(current)</span></a>
+              <a class=\"nav-link\" href=\"{{ path('blog') }}\">Articles <span class=\"sr-only\">(current)</span></a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"/blog/new\">Créer un aricle</a>
+              <a class=\"nav-link\" href=\"{{ path('blog_create') }}\">Créer un aricle</a>
             </li>
           </ul>
         </div>
